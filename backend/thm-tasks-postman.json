@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "bf628406-556d-4e4d-b14a-77caa1b219eb",
+		"name": "task-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30931782",
+		"_collection_link": "https://universal-water-613989.postman.co/workspace/New-Team-Workspace~555772df-1c2f-43f6-8925-8e26c702c5d3/collection/6075986-bf628406-556d-4e4d-b14a-77caa1b219eb?action=share&source=collection_link&creator=30931782"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Noman\",\r\n    \"email\": \"noman@admin.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"noman@admin.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "tasks/list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDNlZTU3YTM5NDAxYzYxYWRlMTUzNyIsImlhdCI6MTY5ODk5ODgxMn0.aDXr9Dp3kua8sjrJv0lbSO3aOStkr5DzTXrcAGmovbI",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "tasks/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDNlZTU3YTM5NDAxYzYxYWRlMTUzNyIsImlhdCI6MTY5ODk2Nzk5NSwiZXhwIjoxNjk4OTY4ODk1fQ.M6Y5nWfhUYF4N9N6fevwu9ZlKfd2alxQTfG1ZytojQU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/tasks/6544c067342591c572e7dc5f"
+			},
+			"response": []
+		},
+		{
+			"name": "task/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDNlZTU3YTM5NDAxYzYxYWRlMTUzNyIsImlhdCI6MTY5ODk4MjYzOCwiZXhwIjoxNjk4OTgzNTM4fQ.NY99uQCvD2iU2uBFQb3ubDcZwlKmz2kKSh-TRPZvQDQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Hammad test description\",\r\n    \"status\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "task/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDNlZTU3YTM5NDAxYzYxYWRlMTUzNyIsImlhdCI6MTY5ODk4MDUzMSwiZXhwIjoxNjk4OTgxNDMxfQ.cZ14VpF4ZU4bsEpy83edNCjAo3H2NFQdzxyfBMW_qT0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Noman demo 4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/tasks/6544c1c5eac69ef6c101d78e"
+			},
+			"response": []
+		},
+		{
+			"name": "task/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDNlZTU3YTM5NDAxYzYxYWRlMTUzNyIsImlhdCI6MTY5ODk4MDUzMSwiZXhwIjoxNjk4OTgxNDMxfQ.cZ14VpF4ZU4bsEpy83edNCjAo3H2NFQdzxyfBMW_qT0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Noman demo 4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/tasks/654434cd57d856d14d34aecf"
+			},
+			"response": []
+		}
+	]
+}
