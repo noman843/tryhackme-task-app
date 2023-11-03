@@ -18,6 +18,7 @@ export const Navbar = () => {
     const computedColorScheme = useComputedColorScheme("light", {
         getInitialValueInEffect: true,
     });
+    const isLightTheme = computedColorScheme === "light";
 
     const [drawerOpened, { toggle: toggleDrawer }] = useDisclosure(false);
 
@@ -26,19 +27,19 @@ export const Navbar = () => {
             <header className={classes.header}>
                 <Group justify="space-between" h="100%">
                     <Box>
-                        <img src="https://assets.tryhackme.com/img/favicon.png"
+                        {isLightTheme ? <img src="https://assets.tryhackme.com/img/favicon.png"
                             alt="Try Hack Me"
                             style={{
                                 width: '50px',
                                 height: '50px',
                                 alignItems: 'start',
-                                margin: '0 auto',
-                                border: '1px solid #212c42',
                                 borderRadius: '10px',
                                 position: 'absolute',
                                 top: '35px',
                                 backgroundColor: '#ffff',
-                            }} />
+                            }} /> : 
+                            <img width="80" src="https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg" alt="TryHackMe" />}
+                        
                     </Box>
 
                     <Group h="100%" gap={10} visibleFrom="sm">
@@ -47,15 +48,13 @@ export const Navbar = () => {
                         </Link>
                         <ActionIcon
                             onClick={() =>
-                                setColorScheme(
-                                    computedColorScheme === "light" ? "dark" : "light"
-                                )
+                                setColorScheme(isLightTheme ? "dark" : "light")
                             }
                             variant="default"
                             size="xl"
                             aria-label="Toggle color scheme"
                         >
-                            {computedColorScheme === "light" ? (
+                            {isLightTheme ? (
                                 <IconMoon
                                     className={cx(classes.icon, classes.dark)}
                                     stroke={1.5}
